@@ -1,0 +1,18 @@
+<title>Safety database</title>
+<h1>Safety database</h1>
+<p></p>
+{% if session.username %}
+<p>You are logged in as {{ session.username }}</p>
+<p></p>
+<a href="/main">Back to the main page</a>
+<p></p>
+<a href="/logout">Log out from the system</a>
+{% else %}
+<form action="/login" method="POST">
+<p>Username:<br>
+<input type="text" name="username"></p>
+<p>Password:<br>
+<input type="password" name="password"></p>
+<input type="submit" value="Log in">
+</form>
+{% endif %}
