@@ -14,7 +14,7 @@ def index():
     return render_template("index.html")
 
 @app.route("/login",methods=["POST"])
-def login():
+def login(username, password):
     username = request.form["username"]
     password = request.form["password"]
     sql = "SELECT password FROM users WHERE username=:username"
@@ -69,3 +69,27 @@ def information():
     result = db.session.execute("SELECT aedescription, reporter, product, patient FROM adrs")
     adrs = result.fetchall()
     return render_template("information.html", count=count, adrs=adrs) 
+
+@app.route("/createnewuser")
+def createnewuser():
+    username = request.form["username"]
+    password = request.form["password"]
+    company = request.form["company"]
+    hash_value = generate_password_hash(password)
+    sql = "INSERT INTO users (username,password,company) VALUES (:username,:password,:company)"
+    db.session.execute(sql, {"username":username,"password":hash_value, "company":company})
+    db.session.commit()
+    return redirect("/")
+
+def register(username,password, company):
+    hash_value = generate_password_hash(password)
+    try:
+        sql = "INSERT INTO users (username,password,company) VALUES (:username,:password,:company)"
+        db.session.execute(sql, {"username":username,"password":hash_value, "company":company})
+        db.session.commit()
+    except:
+        return False
+    return login(username,password)
+
+def user_id():
+    return session.get("user_id",0)
