@@ -8,11 +8,5 @@
 <p></p>
 <a href="/logout">Log out from the system</a>
 {% else %}
-<form action="/login" method="POST">
-<p>Username:<br>
-<input type="text" name="username"></p>
-<p>Password:<br>
-<input type="password" name="password"></p>
-<input type="submit" value="Log in">
-</form>
+<a href="/login">Login to the system</a>
 {% endif %}
