@@ -19,6 +19,7 @@ The functionalities of the safety database include:
 - Notification to admins
 - Searching for statistics related to the adverse events 
 
+Planned structure of the form:
 Login
 username 
 Password
@@ -43,6 +44,7 @@ Adverse event
 Reporter 
 Patient 
 
+Planned report options for the information page: 
 Information 
 Choose report 
 Admin has access to everything 
@@ -50,3 +52,9 @@ User has access to their company’s data
 Line listing of all reports 
 Graph - Reported cases by country
 Graph - Reported cases by date
+
+Planned schema of the database: 
+CREATE TABLE adrs (id SERIAL PRIMARY KEY, dayzero TIMESTAMP, aedescription TEXT, reporter TEXT, patient TEXT);
+CREATE TABLE users (id SERIAL PRIMARY KEY, username TEXT UNIQUE, password TEXT, company TEXT);
+CREATE TABLE countries (country TEXT);
+CREATE TABLE companies (id SERIAL PRIMARY KEY, name TEXT UNIQUE, product TEXT);
