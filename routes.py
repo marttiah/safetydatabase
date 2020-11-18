@@ -45,13 +45,17 @@ def register():
         else:
             return render_template("error.html",message="Registration was unsuccessful")
 
-@app.route("/form", methods=["POST"])
+@app.route("/form")
 def form():
-    aedescription = request.form["aedescription"]
-    reporter = request.form["reporter"]
-    product = request.form["product"]
-    patient =request.form["patient"]
-    if forms.form(aedescription, reporter, product, patient):
-        return render_template("result.html")
-    else:
-        return render_template("error.html",message="The submission of the form was unsuccessful.")
+    return render_template("form.html")
+
+@app.route("/send", methods=["POST"])
+def send():
+        aedescription = request.form["aedescription"]
+        reporter = request.form["reporter"]
+        product = request.form["product"]
+        patient = request.form["patient"]
+        if forms.send(aedescription, reporter, product, patient):
+            return render_template("result.html")
+        else:
+            return render_template("error.html",message="The submission of the form was unsuccessful.")
