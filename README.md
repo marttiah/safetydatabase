@@ -7,6 +7,10 @@ I fixed the issue with opening the app locally and in Heroku. The main reason wa
 
 Some other issues in the code was debugged. Now the system is working as it should except for ADR linelisting not working at /information.html
 
+Bugs:
+- error message not working correctly when username is taken 
+- after login, the username is displaying the ID of the user, not the username
+
 15-Nov-2020: 
 I changed the app structure according to the example in the course material. The main change was to split the app.py to smaller apps with the aim to have the registration working. 
 
