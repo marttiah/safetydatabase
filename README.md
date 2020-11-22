@@ -2,6 +2,12 @@
 Drug safety database
 https://safetydatabase.herokuapp.com/
 
+22-Nov-2020:
+- error message fixed when username is taken
+- the username was removed from the message because the tuple only contains password and user id
+- linelisting in the information page working now
+
+
 18-Nov-2020:
 I fixed the issue with opening the app locally and in Heroku. The main reason was missing "import routes" in the app.py. 
 
