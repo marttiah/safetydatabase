@@ -9,7 +9,7 @@ def login(username, password):
     if user == None:
         return False
     else:
-        if check_password_hash(user[0],password):
+        if check_password_hash(user[1],password):
             session["username"] = user[1]
             return True
         else:
