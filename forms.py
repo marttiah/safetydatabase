@@ -16,7 +16,6 @@ def numberofforms():
     return count
 
 def linelisting():
-    result = db.session.execute("SELECT * FROM adrs")
-    adrs = result.fetchall()
-    return adrs
+    result = db.session.execute("SELECT * FROM adrs ORDER BY aedescription")
+    return result.fetchall()
     
