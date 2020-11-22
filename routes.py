@@ -26,7 +26,7 @@ def login():
         if users.login(username,password):
             return redirect("/main")
         else:
-            return render_template("error.html",message="Wrong username or password")
+            return render_template("error.html",error="Wrong username or password")
 
 @app.route("/logout")
 def logout():
@@ -43,7 +43,7 @@ def register():
         if users.register(username,password):
             return redirect("/")
         else:
-            return render_template("error.html",message="Registration was unsuccessful")
+            return render_template("error.html",error="Registration was unsuccessful")
 
 @app.route("/form")
 def form():
