@@ -1,3 +1,4 @@
+from flask.globals import session
 from app import app
 from flask import render_template, request, redirect
 import users, forms
@@ -49,8 +50,20 @@ def register():
 def form():
     return render_template("form.html")
 
+@app.route("/profile/<int:id>")
+def profile(id):
+    allow = False
+    if is_admin():
+        allow = True
+    elif is_user() and user_id() == id:
+        allow = True
+    if not allow:
+        return render_template("error.html",error="You do not have the access to this page. Try logging in.")
+        
 @app.route("/send", methods=["POST"])
 def send():
+        if session["csfr_token"] != request.form["csfr_token"]:
+            abort(403)
         aedescription = request.form["aedescription"]
         reporter = request.form["reporter"]
         product = request.form["product"]
