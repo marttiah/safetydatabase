@@ -1,12 +1,35 @@
+<!doctype html>
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
 <title>Safety database</title>
-<h1>Safety database</h1>
-This is an online safety database for reporting adverse drug reactions (ADR).<br>
-You can either submit a new ADR or view the ADRs that you have submitted.<br>
-The admins of the system can view all the ADRs. <br>
-<p>
-<a href="/form">Submit a new ADR</a>
-<p>
-<a href="/information">View ADR information</a>
-<p></p>
-    <p></p>
-    <a href="/logout">Log out from the system</a>
+<div class="container">
+    <nav class="navbar navbar-expand-sm navbar-light">
+        <a class="navbar-brand" href="/main">Safety Database</a>
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link" href="/form">ADR Form</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/information">ADR Information</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/logout">Log out</a>
+          </li>
+        </ul>
+      </nav>
+      <div class="row">
+        <div class="col-8">
+        <h1>Safety database</h1>
+        This is an online safety database for reporting adverse drug reactions (ADR).<br>
+        You can either submit a new ADR or view the ADRs that you have submitted.<br>
+        The admins of the system can view all the ADRs. <br>
+        <p>
+        <a href="/form">Submit a new ADR</a>
+        <p>
+        <a href="/information">View ADR information</a>
+        <p></p>
+            <p></p>
+            <a href="/logout">Log out from the system</a>
+        </div>
+    </div>
+</div>
