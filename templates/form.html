@@ -13,4 +13,5 @@
     <textarea name="patient" rows="3" cols="50"></textarea>
     <p>
     <input type="submit" value="Submit">
+    <input type="hidden" name="csrf_token" value="{{ session.csrf_token }}">
 </form>
