@@ -1,17 +1,47 @@
+<!doctype html>
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+<title>ADR Form</title>
+<div class="container">
+    <nav class="navbar navbar-expand-sm navbar-light">
+        <a class="navbar-brand" href="/main">Safety Database</a>
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link" href="/form">ADR Form</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/information">ADR Information</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/logout">Log out</a>
+          </li>
+        </ul>
+      </nav>
+      <div class="row">
+        <div class="col-8">
+          <h1>ADR Form</h1>
 <form action="/send" method="POST">
-    <p>
-    Adverse event description: <br>
-    <textarea name="aedescription" rows="3" cols="50"></textarea>
-    <p>
-    Reporter information: <br>
-    <textarea name="reporter" rows="3" cols="50"></textarea>
-    <p>
-    Product information: <br>
-    <textarea name="product" rows="3" cols="50"></textarea>
-    <p>
-    Patient information: <br>
-    <textarea name="patient" rows="3" cols="50"></textarea>
-    <p>
-    <input type="submit" value="Submit">
+        <div class="form-group col-6">
+            <label for="aedescription">Adverse Drug Reaction Description</label>
+            <textarea name="aedescription" rows="3" cols="50"></textarea>
+        </div>
+        <div class="form-group col-6">
+            <label for="reporter">Reporter information</label>   
+        <textarea name="reporter" rows="3" cols="50"></textarea>
+        </div>
+        <div class="form-group col-6">
+            <label for="reporter">Product information</label>  
+            <textarea name="product" rows="3" cols="50"></textarea>
+            </div>
+            <div class="form-group col-6">
+                <label for="patient">Patient information</label>  
+                <textarea name="patient" rows="3" cols="50"></textarea>
+            </div>
+            <div class="form-group col-6">
+                <button type="submit" class="btn btn-primary">Submit</button>
+            </div>
     <input type="hidden" name="csrf_token" value="{{ session.csrf_token }}">
 </form>
+</div>
+</div>
+</div>
