@@ -1,12 +1,35 @@
+<!doctype html>
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
 <title>Safety database</title>
-<h1>Safety database</h1>
-<p></p>
-{% if session.username %}
-<p>You are logged in.</p>
-<p></p>
-<a href="/main">Back to the main page</a>
-<p></p>
-<a href="/logout">Log out from the system</a>
-{% else %}
-<a href="/login">Login to the system</a>
-{% endif %}
+<div class="container">
+    <nav class="navbar navbar-expand-sm navbar-light">
+        <a class="navbar-brand" href="#">Safety Database</a>
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link" href="#">Page 1</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Page 2</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Page 3</a>
+          </li>
+        </ul>
+      </nav>
+    <div class="row">
+      <div class="col-8">
+        <h1>Safety database</h1>
+        <p></p>
+        {% if session.username %}
+        <p>You are logged in.</p>
+        <p></p>
+        <a href="/main">Back to the main page</a>
+        <p></p>
+        <a href="/logout">Log out from the system</a>
+        {% else %}
+        <a href="/login">Login to the system</a>
+        {% endif %}
+    </div>
+</div>
+</div>
