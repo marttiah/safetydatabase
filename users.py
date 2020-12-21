@@ -30,3 +30,17 @@ def register(username,password):
 
 def username():
     return session.get("username",0)
+
+def is_admin():
+    sql = "SELECT role FROM users WHERE id == user_id"
+    result = db.session.execute(sql, {"role":role})
+    #if role = 'admin'
+    if result.fetchone() != None:
+        allow = True
+        
+def is_user():
+    sql = "SELECT role FROM users WHERE id == user_id"
+    result = db.session.execute(sql, {"role":role})
+    #if role = 'user'
+    if result.fetchone() != None:
+        allow = True
