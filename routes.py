@@ -62,8 +62,6 @@ def profile(id):
         
 @app.route("/send", methods=["POST"])
 def send():
-        if session["csfr_token"] != request.form["csfr_token"]:
-            abort(403)
         aedescription = request.form["aedescription"]
         reporter = request.form["reporter"]
         product = request.form["product"]
