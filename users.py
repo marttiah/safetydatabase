@@ -4,7 +4,6 @@ from werkzeug.security import check_password_hash, generate_password_hash
 from os import urandom
 
 def login(username, password):
-    session["csrf_token"] = os.urandom(16).hex()
     sql = "SELECT password, id FROM users WHERE username=:username"
     result = db.session.execute(sql, {"username":username})
     user = result.fetchone() 
