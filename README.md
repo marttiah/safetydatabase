@@ -2,13 +2,34 @@
 Drug safety database
 https://safetydatabase.herokuapp.com/
 
+22-Dec-2020:
+
+Updates: 
+- Bootstrap added 
+- Minor changes to the content of the website (text, links)
+- Testing with 'admin' and 'user' roles done 
+    - Still needs updating 
+- Peer review read
+    - Suggestions to to-do
+- CSRF tested, not working, removed
+    - Still needs to be added 
+
+To-do: 
+- Password requirements 
+- Add session and session checking 
+- CSRF
+- ADR information page formatting 
+- ?Admin and User roles? - not absolutely necessary 
+
 22-Nov-2020:
+
 - error message fixed when username is taken
 - the username was removed from the message because the tuple only contains password and user id
 - linelisting in the information page working now
 
 
 18-Nov-2020:
+
 I fixed the issue with opening the app locally and in Heroku. The main reason was missing "import routes" in the app.py. 
 
 Some other issues in the code was debugged. Now the system is working as it should except for ADR linelisting not working at /information.html
@@ -18,6 +39,7 @@ Bugs:
 - after login, the username is displaying the ID of the user, not the username
 
 15-Nov-2020: 
+
 I changed the app structure according to the example in the course material. The main change was to split the app.py to smaller apps with the aim to have the registration working. 
 
 The first deployment to Heroku worked otherwise fine, but it was missing the possibility to add new users - and thus it was not possible to login to the app. 
