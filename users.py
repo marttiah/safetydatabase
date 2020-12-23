@@ -9,12 +9,15 @@ def login(username, password):
     user = result.fetchone() 
     if user == None:
         return False
+        #Invalid username
     else:
         if check_password_hash(user[0],password):
             session["username"] = user[1]
+            #Correct username and password
             return True
         else:
              return False
+             #Invalid password
 
 def logout():
     del session["username"]
