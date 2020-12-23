@@ -2,6 +2,20 @@
 Drug safety database
 https://safetydatabase.herokuapp.com/
 
+23-Dec-2020: 
+
+Updates:
+- Trying to fix issues with login and register that appeared after adding Bootstrap
+- Session information reviewed for CSRF and to prevent login bypass issues 
+- Password requirements added for the registration 
+
+To-do: 
+- Password requirements finalization? 
+- Add session and session checking finalization
+- CSRF
+- ADR information page formatting 
+- ?Admin and User roles? - not absolutely necessary 
+
 22-Dec-2020:
 
 Updates: 
